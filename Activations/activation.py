@@ -3,7 +3,6 @@ from numpy import multiply
 class Activation:
     def __init__(self, activation, activation_prime):
         self.input = None
-        self.output = None
         self.activation = activation
         self.derv_activation = activation_prime
 
