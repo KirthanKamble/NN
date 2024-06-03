@@ -1,3 +1,9 @@
 class LossFn:
     def __init__(self, ):
-        self.input = None
+        pass
+
+    def loss(self, y_true, y_pred):
+        pass
+
+    def gradient(self, y_true, y_pred):
+        pass
