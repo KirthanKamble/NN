@@ -1,6 +1,6 @@
 from layer import Layer
 from numpy import dot
-from numpy.random import rand
+from numpy.random import randn
 
 class Dense(Layer):
     def __init__(self, input_size, output_size):
