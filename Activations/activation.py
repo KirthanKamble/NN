@@ -10,5 +10,5 @@ class Activation:
         self.input = input_data
         return self.activation(input_data)
 
-    def backward(self, output_grad, learning_rate):
+    def backward(self, output_grad):
         return multiply(self.derv_activation(self.input), output_grad)
