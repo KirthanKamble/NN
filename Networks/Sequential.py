@@ -1,4 +1,4 @@
-class Network:
+class Sequential:
     def __init__(self, architecture, loss_fn):
         self.prediction = None
         self.achitecture = architecture
