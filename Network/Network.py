@@ -4,6 +4,9 @@ class Network:
         self.achitecture = architecture
         self.loss_fn = loss_fn
 
+    def add(self, layer):
+        self.achitecture.append(layer)
+
     def predict(self, input_data):
         for layer in self.achitecture:
             output = layer.forward(input_data)
