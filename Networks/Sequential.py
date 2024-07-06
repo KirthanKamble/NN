@@ -31,4 +31,5 @@ class Sequential:
                     grad = layer.backward(grad, lr)
 
                 error /= len(X_train)
-                print(f"Completed {epoch+1} epoch, loss = {error}")
+
+            print(f"Completed {epoch+1}/{epochs} epoch, loss = {error}")
