@@ -1,14 +1,14 @@
 class Sequential:
     def __init__(self, architecture, loss_fn):
         self.prediction = None
-        self.achitecture = architecture
+        self.architecture = architecture
         self.loss_fn = loss_fn
 
     def add(self, layer):
-        self.achitecture.append(layer)
+        self.architecture.append(layer)
 
     def predict(self, input_data):
-        for layer in self.achitecture:
+        for layer in self.architecture:
             output = layer.forward(input_data)
             input_data = output
 
@@ -19,21 +19,20 @@ class Sequential:
         for epoch in range(epochs):
             error = 0
             for X_train, y_train in zip(X, y):
-                # forward pass
+                # Forward pass
                 y_pred = self.predict(X_train)
 
                 # Error
-                error += self.loss_fn.loss(y_train, y_pred)
+                error += self.loss_fn.loss(y_true=y_train, y_pred=y_pred)
 
                 # Backward
-                grad = self.loss_fn.gradient(y_train, y_pred)
-                for layer in reversed(self.achitecture):
+                grad = self.loss_fn.gradient(y_true=y_train, y_pred=y_pred)
+                for layer in reversed(self.architecture):
                     grad = layer.backward(grad, lr)
 
-                error /= len(X_train)
-
+            error /= len(X)  # Average the error over the entire training set
             print(f"Completed {epoch+1}/{epochs} epoch, loss = {error}")
 
     def loss(self, X, y):
         output = self.predict(X)
-        return self.loss_fn.loss(output, y)
+        return self.loss_fn.loss(y_true=y, y_pred=output)
