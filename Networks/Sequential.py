@@ -33,3 +33,7 @@ class Sequential:
                 error /= len(X_train)
 
             print(f"Completed {epoch+1}/{epochs} epoch, loss = {error}")
+
+    def loss(self, X, y):
+        output = self.predict(X)
+        return self.loss_fn.loss(output, y)
