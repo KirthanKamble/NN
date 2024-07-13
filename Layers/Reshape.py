@@ -1,6 +1,6 @@
 import numpy as np
 
-class Reshpae:
+class Reshape:
     def __init__(self, input_shape, output_shape):
         self._input_shpae = input_shape
         self._output_shpae = output_shape
