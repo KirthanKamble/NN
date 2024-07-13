@@ -1,5 +1,5 @@
 from numpy import maximum, where
-from activation import Activation
+from .activation import Activation
 
 class ReLU(Activation):
     def __init__(self):

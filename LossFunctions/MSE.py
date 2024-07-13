@@ -1,4 +1,4 @@
-from lossfn import LossFn
+from .lossfn import LossFn
 from numpy import mean, array
 
 class MSE(LossFn):

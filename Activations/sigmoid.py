@@ -1,4 +1,4 @@
-from activation import Activation
+from .activation import Activation
 from numpy import exp
 
 class Sigmoid(Activation):

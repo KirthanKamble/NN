@@ -1,4 +1,4 @@
-from layer import Layer
+from .layer import Layer
 from numpy import dot
 from numpy.random import randn
 
